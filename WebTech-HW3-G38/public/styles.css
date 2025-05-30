@@ -1,0 +1,431 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+}
+
+h1{
+    font-size: 3em;
+    font-family: 'nyt-karnak', serif;
+    color: #e22911e8;
+}
+
+h2{
+    font-size: 2.3em;
+    font-family: 'nyt-karnak', serif;
+    color: rgb(212, 68, 48);
+}
+
+h3{
+    font-size: 1em;
+    font-family: 'nyt-karnak', serif;
+    color: rgb(151, 51, 38);
+    text-decoration: underline;
+}
+
+h4{
+    font-size: 1em;
+    font-family: 'nyt-karnak', serif;
+    color: initial;
+}
+
+header{
+    display: flex;
+    margin: 4em 20vw;
+    align-content: center;
+    justify-content: center;
+    border: solid;
+    border-radius: 1cm;
+    border-color: grey;
+    box-shadow: 0 0.2em 0.3em 0 rgba(0, 0, 0, 0.2), 0 0.4em 2em 0 rgba(0, 0, 0, 0.19);
+    background-image: url("pictures/cooking-cat.jpg");  
+    background-size: 20%;
+}
+
+.banner{
+    backdrop-filter: blur(1.5px);
+}
+
+.introduction__catch-phrase{
+    padding-bottom: 3em;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.introduction__text{
+    padding-bottom: 4em;
+    padding-right: 1em;
+    text-align: justify;
+}
+
+body{
+    background-color: #f1ead7c5;
+    
+}
+
+main{
+    margin: 1em 6em;
+    padding: 1em 6em;
+    background-color: #f4f4f4;
+    text-align: center;
+    box-shadow: 0 0.2em 0.3em 0 rgba(0, 0, 0, 0.2), 0 0.4em 2em 0 rgba(0, 0, 0, 0.19);
+}
+
+.link-table__caption{
+    color: #df321b;
+    font-weight: bold;
+    padding-bottom: 1em;
+}
+
+.link-table__body{
+    background-color: cornflowerblue;
+}
+
+.link-table, th, td{
+    border: 0.1em solid;
+    border-collapse: collapse;
+    padding: 1em;
+    text-align: center;
+}
+
+.link-table{
+    padding-bottom: 3em;
+}
+
+
+.article-container{
+    display: flex;
+}
+
+.news__art1__img{
+    margin-left: 2.5em;
+    display: flex;
+    width: 200%;
+    display: inline-block;
+}
+
+.news__art1__img img{
+    width: 100%;
+    object-fit: contain;
+      
+}
+
+.news__art2__img{
+    margin-left: 2.5em;
+    display: flex;
+    width: 100%;
+    display: inline-block;
+}
+
+.news__art2__img img{
+    width: 100%;
+    object-fit: contain;
+      
+}
+
+
+
+.news__art1__suggestions{
+    padding-top: 1em;
+}
+
+.news__art1__suggestions dt{
+    font-weight: bold;
+}
+
+.news__art1__suggestions dd{
+    padding-bottom: 0.8em;
+}
+
+
+
+nav {
+    background: #ffffffdb;
+    padding: 0.8em 1;
+    display: flex;
+    position: sticky;
+    top: 20px;
+    align-content: space-between;
+    justify-content: center;
+    list-style: none;
+    margin: 0 1em;
+    border: black solid 1px;
+    border-radius: 1em;
+    box-shadow: 0 0.2em 0.3em 0 rgba(0, 0, 0, 0.2), 0 0.4em 2em 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 2em;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    color: initial;
+    padding: 0.5em 1em;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color:#0077cc;
+}
+
+#file-input {
+    display: flex; 
+    margin: 0.5em auto; 
+    padding: 0.5em 0.5em; 
+    font-size: 1em; 
+    border: 1.5px solid rgb(0, 0, 0); 
+    border-radius: 10px;
+    background-color: #f8f8f8;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+}
+
+#file-input input {
+    margin-left: 1em;
+    width: 30%;
+    cursor: pointer; 
+}
+
+#login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    gap: 1em; /* Increase gap for better spacing */;
+    margin: 0 auto;
+    width: 70%;
+    padding: 1.5em; /* Increase padding for better spacing */
+    border-radius: 15px; /* Slightly larger border radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+#login-container input {
+    width: 40%;
+    padding: 0.5em; /* Slightly larger padding */
+    border-radius: 5px; /* Rounded corners */
+    border: 1px solid #ccc; /* Softer border color */
+    font-size: 0.75em;
+    margin: 0 auto; /* Center the input fields */
+    transition: border-color 0.3s ease; /* Smooth transition for focus */
+}
+
+#login-container input:focus {
+    border-color: #b32d1b; /* Highlight border on focus */
+    outline: none; /* Remove default outline */
+}
+
+#login-container h2 {
+    margin: 0.25em; /* Add some padding around the title */
+    margin-bottom: 0.25em; /* Add some space below the title */
+}
+
+#login-container a {
+    font-weight: bold;
+    text-decoration: none; /* Remove underline */
+    width: 40%;
+}
+
+.button-style {
+    background-color: #b32d1b;
+    width: 25%;
+    color: white;
+    font-weight: bold;
+    padding: 0.75em 1.5em; /* Slightly larger padding */
+    border-radius: 5px; /* Rounded corners */
+    border: none; /* Remove border */
+    cursor: pointer;
+    font-size: 0.75em;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+.button-style:hover {
+    background-color: #9e1010; /* Darker shade on hover */
+}
+
+.button-style a {
+    text-decoration: none; /* Remove underline */
+    color: white; /* White text color */
+}
+
+#login-container label {
+    font-weight: bold;
+}
+
+#login-container select {
+    width: 40%;
+    padding: 0.25em; /* Slightly larger padding */
+    border-radius: 5px; /* Rounded corners */
+    border: 1px solid #ccc; /* Softer border color */
+    font-size: 0.75em;
+    transition: border-color 0.3s ease; /* Smooth transition for focus */
+    text-align: center;
+}
+
+.error-box {
+    border: 1px solid red;
+    padding: 10px;
+    background-color: #ffe6e6;
+    color: red;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+#email{
+    background-color: #797979;
+    color:#cccc;
+    font-weight: bold;
+    cursor: not-allowed;
+}
+
+.profile-section {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px 30px;
+    background-color: #fdfdfd;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+.profile-section h2 {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color:rgb(212, 68, 48);
+}
+
+.profile-section ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.profile-section li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1.05em;
+}
+
+.profile-section li:last-child {
+    border-bottom: none;
+}
+
+.profile-photo {
+    margin: 0 auto;
+    margin-top: 10px;
+    border-radius: 10px;
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.classmates-section {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fcfcfc;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+
+    .button-style {
+        width: 85%;
+    }
+  }
+
+  .classmates-section h1 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: rgb(212, 68, 48);
+  }
+  
+  .classmates-section ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  .classmate-card {
+    width: 200px;
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    text-align: center;
+  }
+
+  .classmate-card img {
+    max-width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+    margin: 10px 0;
+    border-radius: 6px;
+    background-color: #f2f2f2;
+  }
+
+  .classmate-card strong {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+  }
+
+  .classmate-card form {
+    margin-top: 10px;
+  }
+  
+  .back-link {
+    display: inline-block;
+    margin-top: 30px;
+    text-decoration: none;
+    color: rgb(212, 68, 48);
+    font-weight: bold;
+  }
+  
+  .back-link:hover {
+    text-decoration: underline;
+  }
+  
+@media screen and (max-width: 1200px) {
+
+    main{
+        margin: 2.5em 5em;
+        padding: 2.5em 5em;
+
+    }
+
+    .banner{
+        background-size: 25%;
+    }
+    
+    h1{
+        font-size: 1.5em;
+    }
+
+    h2{
+        font-size: 1.15em;
+
+    }
+    
+    h3{
+        font-size: 1em;
+    }
+    
+    h4{
+        font-size: 1em;
+    }
+
+    html {
+        font-size: 0.6em;
+    }
+  }

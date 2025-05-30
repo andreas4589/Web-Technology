@@ -1,0 +1,41 @@
+<!-- Dynamic page that displays the information of the user -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/js/script.js" type="module"></script>
+  </head>
+  <body>
+    <header>
+      <h1 class="banner">Profile</h1>
+    </header>
+    <nav>
+        <a href="/group38/users/home/<%= useremail %>">Home</a>
+        <a href="/group38/users/profile/<%= email %>">View Profile</a>
+        <a href="/group38/users/profile/edit/<%= email %>">Edit Profile</a>
+        <a href="/group38/users/courses/<%= email %>">My Courses</a>
+        <a href="/group38/users/friends/<%= email %>">Friends</a>
+        <a href="/group38/users/message-box/<%= email %>">Check your messages</a>
+        <a href="/group38/users/write-message">Write messages</a>
+    </nav>
+    <main class="profile-section">
+      <h2><%=fname%>'s profile</h2>
+      <ul>
+        <li><strong>First name:</strong> <%=fname%></li>
+        <li><strong>Last name:</strong> <%=lname%></li>
+        <li><strong>Age:</strong> <%=age%></li>
+        <li><strong>E-mail address:</strong> <%=email%></li>
+        <li>
+          <strong>Photo:</strong>
+          <img src="<%=photo%>" class="profile-photo" alt="photo" width="100" />
+        </li>
+        <li><strong>Program / Major:</strong> <%= program %></li>
+        <li><strong>Hobbies:</strong> <%=hobbies%></li>
+      </ul>
+    </main>
+  </body>
+</html>

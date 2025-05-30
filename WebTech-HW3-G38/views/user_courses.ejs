@@ -1,0 +1,46 @@
+<!--
+Dynamic page where that displays all of the courses the user has taken.
+He can click on any of these courses to see which user follow the course.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Courses</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/js/script.js" type="module"></script>
+  </head>
+  <body>
+    <header class="banner">
+      <h1 class="banner">My Courses</h1>
+    </header>
+    <nav>
+        <a href="/group38/users/home/<%= email %>">Home</a>
+        <a href="/group38/users/profile/<%= email %>">View Profile</a>
+        <a href="/group38/users/profile/edit/<%= email %>">Edit Profile</a>
+        <a href="/group38/users/courses/<%= email %>">My Courses</a>
+        <a href="/group38/users/friends/<%= email %>">Friends</a>
+        <a href="/group38/group38/users/message-box/<%= email %>">Check your messages</a>
+        <a href="/group38/users/write-message">Write messages</a>
+    </nav>
+    <main class="profile-section">
+      <% if (courses.length > 0) { %>
+      <ul>
+        <% courses.forEach(course => { %>
+        <li>
+          <a
+            href="/group38/users/courses/course/<%= encodeURIComponent(course.course_name) %>"
+          >
+            <%= course.course_name %>
+          </a>
+        </li>
+        <% }) %>
+      </ul>
+      <% } else { %>
+      <p>You are not enrolled in any courses.</p>
+      <% } %>
+    </main>
+  </body>
+</html>

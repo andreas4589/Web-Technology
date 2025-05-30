@@ -1,0 +1,51 @@
+<!-- Dynamic page where the user can write a message to is friends. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send a Message</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/js/script.js" type="module"></script>
+</head>
+<body>
+    <header>      
+        <h1 class="banner">Inbox</h1>
+    </header>
+    <nav>
+        <a href="/group38/users/home/<%= email %>">Home</a>
+        <a href="/group38/users/profile/<%= email %>">View Profile</a>
+        <a href="/group38/users/profile/edit/<%= email %>">Edit Profile</a>
+        <a href="/group38/users/courses/<%= email %>">My Courses</a>
+        <a href="/group38/users/friends/<%= email %>">Friends</a>
+        <a href="/group38/users/message-box/<%= email %>">Check your messages</a>
+        <a href="/group38/users/write-message">Write messages</a>
+    </nav>
+    <main>
+        <h2>Write a Message</h2>
+        <p>Hello <%= name %>. Here you can write and reply to your friends.</p>
+      
+        <% if (!friends_list || friends_list.length === 0) { %>
+          <p>You don't have any friends to send a message to. Go make some friends!</p>
+        <% } else { %>
+          <form action="/group38/users/sendMessage" method="POST">
+            <label for="recipient">Choose a friend:</label><br />
+            <select name="recipient" id="recipient" required>
+              <% friends_list.forEach(friend => { %>
+                <option value="<%= friend.email %>" 
+                  <%= recipient === friend.email ? "selected" : "" %>>
+                  <%= friend.firstName %> <%= friend.lastName %>
+                </option>
+              <% }) %>
+            </select><br><br>
+      
+            <label for="message-content">Message:</label><br>
+            <textarea name="message-content" id="message-content" rows="5" cols="40" required></textarea><br><br>
+      
+            <button type="submit" class="button-style">Send</button>
+          </form>
+        <% } %>
+    </main>
+</body>
+</html>

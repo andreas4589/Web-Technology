@@ -1,0 +1,61 @@
+<!-- 
+Dynamic page where the user can check his inbox.
+For each message, there is a reply button that redirects to the write-message page with the recipient already filled.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inbox</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/js/script.js" type="module"></script>
+  </head>
+  <body>
+    <header>
+      <h1 class="banner">Message box</h1>
+    </header>
+    <nav>
+      <a href="/group38/users/home/<%= email %>">Home</a>
+      <a href="/group38/users/profile/<%= email %>">View Profile</a>
+      <a href="/group38/users/profile/edit/<%= email %>">Edit Profile</a>
+      <a href="/group38/users/courses/<%= email %>">My Courses</a>
+      <a href="/group38/users/friends/<%= email %>">Friends</a>
+      <a href="/group38/users/message-box/<%= email %>">Check your messages</a>
+      <a href="/group38/users/write-message">Write messages</a>
+    </nav>
+    <main>
+      <h2>Message History</h2>
+      <p>
+        Hello <%=name%>. Here you can find all of the messages you received from
+        your friends.
+      </p>
+
+      <section id="message-box">
+        <h2>Messages for <%= name %></h2>
+      
+        <% if (!messages_list || messages_list.length === 0) { %>
+          <p>You haven't received any messages...</p>
+        <% } else { %>
+          <% messages_list.forEach(m => { %>
+            <section class="message">
+              <p><strong>From:</strong> <%= m.firstName %> <%= m.lastName %> (<%= m.email %>)</p>
+              <p class="message__content"><%= m.message %></p>
+      
+              <form action="/group38/users/write-message/<%= m.email %>" method="get">
+                <button type="submit" class="button-style">Reply</button>
+              </form>
+            </section>
+          <% }) %>
+        <% } %>
+      </section>
+      
+      
+
+      <a href="/group38/users/write-message">
+        <button type="button" class="button-style">Send or reply to one of your friends</button>
+      </a>
+    </main>
+  </body>
+</html>

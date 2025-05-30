@@ -1,0 +1,79 @@
+<!--
+Dynamic page where the user can see his friends and their profile.
+Also, this is where the user can see if he received any friend request
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Friends of <%= email %></title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="banner">My Friends</h1>
+    </header>
+    <nav>
+      <a href="/group38/users/home/<%= email %>">Home</a>
+      <a href="/group38/users/profile/<%= email %>">View Profile</a>
+      <a href="/group38/users/profile/edit/<%= email %>">Edit Profile</a>
+      <a href="/group38/users/courses/<%= email %>">My Courses</a>
+      <a href="/group38/users/friends/<%= email %>">Friends</a>
+      <a href="/group38/users/message-box/<%= email %>">Check your messages</a>
+      <a href="/group38/users/write-message">Write messages</a>
+    </nav>
+    <main class="profile-section">
+      <h2>Your Friends</h2>
+      <% if (friends.length === 0) { %>
+      <p>You don't have any friends yet.</p>
+      <% } else { %>
+      <ul>
+        <% friends.forEach(friend => { %>
+        <li class="friend-item">
+          <a href="/group38/users/profile/<%= friend.email %>">
+            <strong><%= friend.firstName %> <%= friend.lastName %></strong>
+          </a>
+        </li>
+        <% }) %>
+      </ul>
+      <% } %>
+
+      <h2>Friend Requests</h2>
+      <% if (requests.length === 0) { %>
+      <p>No pending friend requests.</p>
+      <% } else { %>
+      <ul>
+        <% requests.forEach(req => { %>
+        <li class="request-item">
+          <strong><%= req.firstName %> <%= req.lastName %></strong><br />
+          <% if (req.photo) { %>
+          <img src="<%= req.photo %>" class="profile-photo" alt="photo" width="100" /><br />
+          <% } %> <%= req.email %>
+          <form
+            action="/group38/users/friend-request/accept"
+            method="POST"
+            style="display: inline"
+          >
+            <input type="hidden" name="sender" value="<%= req.email %>" />
+            <button type="submit" class="button-style">Accept</button>
+          </form>
+
+          <form
+            action="/group38/users/friend-request/remove"
+            method="POST"
+            style="display: inline"
+          >
+            <input type="hidden" name="sender" value="<%= req.email %>" />
+            <button type="submit" class="button-style">Remove</button>
+          </form>
+        </li>
+        <% }) %>
+      </ul>
+      <% } %>
+
+      <a href="/group38/users/home/<%= email %>">Back to Home</a>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!-- Register page where a user can create an account -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="js/script.js" type="module"></script>
+</head>
+<body>
+    <header>
+        <h1>Web For Cooking</h1>
+    </header>
+    <form action="/group38/users/authentication/register" method="post" id="login-container">
+        <h2>Register to access the website</h2>
+        <label for="firstName">First name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+        <label for="lastName">Last name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age" required>
+        <label for="email">E-mail address:</label>
+        <input type="text" name="email" required>
+        <label for="photo">Photo:</label>
+        <input type="text" id="photo" name="photo">
+        <label for="program">Program / Major:</label>
+        <select name="program" id="program">
+            <option value="Computer Science">Computer Science</option>
+            <option value="Artificial Intelligence">Artificial Intelligence</option>
+            <option value="Mathematics">Mathematics</option>
+            <option value="Physics">Physics</option>
+            <option value="Biology">Biology</option>
+            <option value="Chemistry">Chemistry</option>
+            <option value="Engineering">Engineering</option>
+        </select>
+        <label for="hobbies">Hobbies:</label>
+        <i>fill in your hobbies like this: hobbie1,hobie2,hobbie3,...</i>
+        <input type="text" id="hobbies" name="hobbies" required>
+        <label for="courses">Courses:</label>
+        <i>select multiple courses by holding ctrl (or cmd for mac)</i>
+        <select id="courses" name="courses[]" multiple size="5">
+            <option value="Informatica Softwareproject">Informatica Softwareproject</option>
+            <option value="Databases">Databases</option>
+            <option value="Functioneel Programmeren">Functioneel Programmeren</option>
+            <option value="Onderzoeksmethoden voor Informatica">Onderzoeksmethoden voor Informatica</option>
+            <option value="Machine Learning">Machine Learning</option>
+            <option value="Security">Security</option>
+            <option value="Computationele Intelligentie">Computationele Intelligentie</option>
+            <option value="Algoritmiek">Algoritmiek</option>
+            <option value="Discrete Wiskunde">Discrete Wiskunde</option>
+            <option value="Intelligente Systemen">Intelligente Systemen</option>
+            <option value="Webtechnologie">Webtechnologie</option>
+            <option value="Software Testing en Verificatie">Software Testing en Verificatie</option>
+          </select>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button class="button-style" type="submit">Register</button>
+    </form>
+</body>
+</html>

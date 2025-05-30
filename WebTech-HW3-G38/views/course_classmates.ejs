@@ -1,0 +1,34 @@
+<!--
+Dynamic page where the user can see all of the students enrolled in a course.
+This is where the user is redirected when he click on one of the courses in user_courses
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= course %> - Classmates</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-course="<%= course %>">
+    <nav>
+      <a href="/group38/users/home/<%= email %>">Home</a>
+      <a href="/group38/users/profile/<%= email %>">View Profile</a>
+      <a href="/group38/users/profile/edit/<%= email %>">Edit Profile</a>
+      <a href="/group38/users/courses/<%= email %>">My Courses</a>
+      <a href="/group38/users/friends/<%= email %>">Friends</a>
+      <a href="/group38/users/message-box/<%= email %>">Check your messages</a>
+      <a href="/group38/users/write-message">Write messages</a>
+    </nav>
+    <main class="classmates-section">
+      <h1>Classmates in <%= course %></h1>
+      <ul id="classmate-list">
+        <li>Loading classmates...</li>
+      </ul>
+    
+      <a href="/group38/users/courses/<%= email %>" class="back-link">← Back to Courses</a>
+    </main>
+    <script src="/js/script.js"></script>
+  </body>
+</html>
